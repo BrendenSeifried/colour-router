@@ -11,15 +11,16 @@ import styles from './App.css';
 
 function RGB() {
   // 🚨 Get values for r, g, and b from params
-  const { r } = useParams();
-  console.log(r);
+  // const { r } = useParams();
+  // console.log(r);
 
-  const { g } = useParams();
-  console.log(g);
+  // const { g } = useParams();
+  // console.log(g);
 
-  const { b } = useParams();
-  console.log(b);
+  // const { b } = useParams();
+  // console.log(b);
 
+  const { r, g, b } = useParams();
   // 🚨 Uncomment next lines after importing
   return (
     <div
@@ -35,9 +36,11 @@ function RGB() {
 function ScreenColor() {
   return (
     <div>
-      <Route path="/rgb/:r/:g/:b">
-        <RGB />
-      </Route>
+      <Switch>
+        <Route path="/rgb/:r/:g/:b">
+          <RGB />
+        </Route>
+      </Switch>
     </div>
   );
 }
